@@ -2192,6 +2192,11 @@ html body .fabm a.fm-vb:hover svg,html body .fabm a.fm-wa:hover svg{color:#fff!i
 html body .fabw{transition:opacity .25s}
 html body .fabw.fhide{opacity:0;pointer-events:none}
 html body .tgfab .fo{transform:translate(.75px,-1px)}
+/* телефон і планшет: форма на всю ширину плашки, однакові відступи з обох боків */
+@media(max-width:1100px){html body .c3 .c3f{width:100%!important;max-width:none!important;justify-self:stretch!important;grid-template-columns:1fr!important;box-sizing:border-box}}
+/* телефон: вкладки в шапці з тим самим відступом від краю, що й контент */
+@media(max-width:720px){html body header>.wrap,html body header .hin{padding-left:20px!important;padding-right:20px!important}html body header .tabs{margin-left:0!important;margin-right:0!important}}
+@media(max-width:720px){html body header.top>.wrap.tb{padding-left:20px!important;padding-right:20px!important}}
 </style>
 <header class="top"><div class="wrap tb"><a class="logo" href="/">AndiStudio</a>
 <nav class="tabs"><a href="/internet-magazyn" data-v="shop">Інтернет магазин</a><a href="/lending" data-v="land">Лендінг</a><a href="/bagatostorinkovyi" data-v="corp">Багатосторінковий</a></nav>
