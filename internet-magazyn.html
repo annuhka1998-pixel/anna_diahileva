@@ -2305,7 +2305,7 @@ var LEAD_SRC='';document.addEventListener('click',function(e){var a=e.target.clo
 function leadSrc(f){if(f.classList.contains('c3f'))return 'форма «Ще не визначились з тарифом?»';return LEAD_SRC||'форма внизу сторінки'}
 var TG_TOKEN='9011200129:AAEdf-7-jzKNWBi3vAQ9INufUY9MAz6LSSU',TG_CHAT='631548842';/* токен бота від @BotFather і chat_id */
 function ctaSend(f){if(f.w&&f.w.value)return false;var v=document.querySelector('.view:not([hidden])');var pg={shop:'Інтернет-магазин',land:'Лендінг',corp:'Багатосторінковий сайт'}[v&&v.dataset.view]||'Головна';var d={name:f.n.value,contact:f.t.value,msg:f.m?f.m.value:''};var ok=f.querySelector('.ctok'),btn=f.querySelector('button[type=submit]');function done(){if(ok)ok.hidden=false;if(btn)btn.disabled=true;if(window.gtag)gtag('event','generate_lead',{lead_source:leadSrc(f),page:pg});f.reset()}
-var text='Нова заявка з сайту AndiStudio\n\nІмʼя: '+d.name+'\nКонтакт: '+d.contact+(d.msg?'\nПро проєкт: '+d.msg:'')+'\nСторінка: '+pg+'\nЗвідки: '+leadSrc(f);
+var text='Нова заявка з сайту AndiStudio\n\nІмʼя: '+d.name+'\nКонтакт: '+d.contact+(d.msg?'\nПро проєкт: '+d.msg:'')+'\nСторінка: '+pg+'\nЗвідки: '+leadSrc(f)+'\nАдреса: '+location.origin+location.pathname;
 if(!TG_TOKEN||!TG_CHAT){location.href='mailto:annuhka1998@gmail.com?subject='+encodeURIComponent('Заявка з сайту')+'&body='+encodeURIComponent(text);done();return false}
 if(btn)btn.disabled=true;var body=new URLSearchParams({chat_id:TG_CHAT,text:text});fetch('https://api.telegram.org/bot'+TG_TOKEN+'/sendMessage',{method:'POST',body:body}).then(function(r){if(!r.ok)throw 0;done()}).catch(function(){if(btn)btn.disabled=false;alert('Не вдалося надіслати заявку. Напишіть нам у Telegram @anna_diahileva')});return false}
 
