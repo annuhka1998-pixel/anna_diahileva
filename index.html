@@ -2197,7 +2197,12 @@ html body .tgfab .fo{transform:translate(.75px,-1px)}
 /* телефон: вкладки в шапці з тим самим відступом від краю, що й контент */
 @media(max-width:720px){html body header>.wrap,html body header .hin{padding-left:20px!important;padding-right:20px!important}html body header .tabs{margin-left:0!important;margin-right:0!important}}
 @media(max-width:720px){html body header.top>.wrap.tb{padding-left:20px!important;padding-right:20px!important}}
+/* телефон: у картках «Як ми зробимо» заголовки і тексти на одному рівні */
+@media(max-width:1100px){html body .upx .upxc .upk{justify-content:flex-start!important;min-height:0!important;height:auto!important}html body .upx .upxc .upk h3{margin-top:40px!important;padding-top:0!important}html body .upx .upxc .upk{translate:none!important}}
+/* бонуси: текст поруч з цифрою по нижній лінії */
+@media(max-width:720px){html body .bnc .bnn,html body .bnc h3{align-self:end!important}html body .bnc h3{padding-top:0!important;line-height:1.1!important}}
 </style>
+<script>(function(){function rescue(force){try{var vs=document.querySelectorAll('.view');var any=false;for(var i=0;i<vs.length;i++)if(!vs[i].hidden)any=true;if(!any&&vs.length){vs[0].hidden=false;force=true}if(force)document.documentElement.classList.remove('anim','hwa');}catch(e){}}window.addEventListener('error',function(){setTimeout(function(){rescue(true)},50)});window.addEventListener('load',function(){setTimeout(function(){rescue(false)},2500)});})();</script>
 <header class="top"><div class="wrap tb"><a class="logo" href="/">AndiStudio</a>
 <nav class="tabs"><a href="/internet-magazyn" data-v="shop">Інтернет магазин</a><a href="/lending" data-v="land">Лендінг</a><a href="/bagatostorinkovyi" data-v="corp">Багатосторінковий</a></nav>
 <a class="btn btn-p hcta" href="/" id="hcta">Залишити заявку<i><svg class="ar" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></i></a></div></header>
@@ -2321,6 +2326,7 @@ document.addEventListener('click',function(e){var a=e.target.closest('a[href]');
 [].forEach.call(document.styleSheets,function(sh){try{strip(sh.cssRules)}catch(e){}})})();
 
 (function(){var w=document.querySelector('.fabw'),fb=document.querySelector('footer .fb');if(!w||!fb||!('IntersectionObserver' in window))return;new IntersectionObserver(function(es){var v=es[0].isIntersecting;w.classList.toggle('fhide',v);if(v)w.classList.remove('open')}).observe(fb)})();
+;(function(){function eq(){document.querySelectorAll('.upxc').forEach(function(c){var hs=c.querySelectorAll('.upk h3');hs.forEach(function(h){h.style.minHeight=''});if(innerWidth>1100)return;var m=0;hs.forEach(function(h){m=Math.max(m,h.offsetHeight)});if(m)hs.forEach(function(h){h.style.minHeight=m+'px'})})}addEventListener('load',eq);addEventListener('resize',eq);document.addEventListener('click',function(){setTimeout(eq,50)});setTimeout(eq,300)})();
 </script>
 </body>
 </html>
